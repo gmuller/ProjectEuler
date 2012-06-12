@@ -1,18 +1,36 @@
+var numbers = [];
+
+var fs = require('fs');
+var array = fs.readFileSync('18.txt').toString().split("\n");
+for(i in array) {
+    var digits = array[i].split(" ");
+    var numberLine = [];
+    for (j in digits) { numberLine.push(parseInt(digits[j]));}
+    numbers.push(numberLine);
+}
+
+function Node(origin) {
+    this.origin = origin;
+}
+
 Node.prototype = {
     getMax: function() {
+        if (typeof this.calculated !== "undefined") { return this.calculated; }
+
         if (typeof this.lhs === "undefined" || typeof this.rhs === "undefined"){
             return this.origin;
         }
 
+        var highest;
         if (this.lhs.getMax() > this.rhs.getMax()) {
-            return this.lhs.getMax() + this.origin;
+            highest = this.lhs.getMax();
         } else {
-            return this.rhs.getMax() + this.origin;
+            highest = this.rhs.getMax();
         }
+        this.calculated = highest + this.origin;
+        return this.calculated;
     }
 }
-
-var numbers = [[3],[7, 4], [2, 4, 6], [8, 5, 9, 3]];
 
 var nodeTree = [];
 for (var y = numbers.length-1; y >= 0; y--) {
@@ -28,5 +46,5 @@ for (var y = numbers.length-1; y >= 0; y--) {
     }
     nodeTree.push(nodes);
 }
-console.log(nodeTree);
+
 console.log(nodeTree[nodeTree.length-1][0].getMax());
