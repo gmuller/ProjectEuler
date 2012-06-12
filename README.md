@@ -1,4 +1,4 @@
 javascriptPE
 ============
 
-Vanilla Javascript Solutions to Project Euler Problems
+Vanilla Javascript and Node Solutions to Project Euler Problems
