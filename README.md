@@ -1,8 +1,4 @@
-javascriptPE
+ProjectEuler
 ============
 
-Vanilla Javascript and Node Solutions to Project Euler Problems
-
-I wanted to improve my skills with basic Javascript, learn a little math, and get a taste for scripting with Node. 
-
-Some of the problems are missing right now because I solved them using Google Chrome's built-in console in only a few lines. I may transfer the solutions here at a later date.
+My solutions to Project Euler problems in multiple languages. Someday I may do them in many languages and syntaxes, but for now js and scala will be common, as will C and plain ol' Java. Whatever tool best suits to problem, or whatever I feel like wracking my brain with. Haskell?
